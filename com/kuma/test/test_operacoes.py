@@ -1,9 +1,14 @@
-def capital_case(x):
-    return x.capitalize()
+import pytest
 
-def test_capital_case():
-    assert capital_case('semaphore') == 'Semaphore'
+def soma_1(numero):
+    return int(numero) + 1
 
-    def test_raises_exception_on_non_string_arguments():
-        with pytest.raises(TypeError):
-            capital_case(9)
+def test_soma_1():
+    assert soma_1(41) == 42
+
+def test_soma_1_numero_como_string():
+    assert soma_1("41") ==  43
+
+def test_soma_1_palavra():
+    with pytest.raises(ValueError):
+        soma_1("ingrid")
