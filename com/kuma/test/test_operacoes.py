@@ -1,14 +1,25 @@
 import pytest
 
-def soma_1(numero):
-    return int(numero) + 1
+def somar(n1, n2):
+    return n1 + n2
 
-def test_soma_1():
-    assert soma_1(41) == 42
+def subtrair(n1, n2):
+    return n1 - n2
 
-def test_soma_1_numero_como_string():
-    assert soma_1("41") ==  43
+def multiplicacao(n1,n2):
+    return n1 * n2
 
-def test_soma_1_palavra():
-    with pytest.raises(ValueError):
-        soma_1("ingrid")
+def divisao(n1, n2):
+    return n1 / n2
+
+def test_soma():
+    assert somar(4,6) == 10
+
+def test_subtrair():
+    assert subtrair(10,5)
+
+def test_multiplicacao():
+    assert multiplicacao(20,3)
+
+def  test_divisao():
+    assert divisao(20,5)
